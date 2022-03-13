@@ -20,10 +20,11 @@ for line in test_data_file:
         test_array = []
 
 test_data_file.close()
-
+print(array_of_test_array)
 ###goes through every number in the test case and adds values to final ans
 #goes through every test case
 for lst in array_of_test_array:
+    final_ans=0
     #ever row in test case
     for i in range(32):
         #every column in test case

@@ -4,15 +4,15 @@ def generate_rectangle():
     # generates the 32 by 32 grid
     grid = [[0 for i in range(32)] for j in range(32)]
     #randomly generates the coordinates for the top left and bottom right corners of the rectangle
-    x1 = random.randint(0,31)
-    y1 = random.randint(0,31)
-    x2 = random.randint(0,31)
-    y2 = random.randint(0,31)
+    x1 = random.randint(10,22)
+    y1 = random.randint(10,22)
+    x2 = random.randint(5,9)
+    y2 = random.randint(5,9)
     for i in range(32):
-        if i>=min(x1,x2) and i<=max(x1,x2):
-            for j in range(32):
-                if j>=min(y1,y2) and j<=max(y1,y2):
-                    grid[i][j] = 1
+        for j in range(32):
+            if i<=x1+x2 and i>=x1-x2:
+                if j<=y1+y2 and j>=y1-y2:
+                    grid[i][j]=1
     return grid
 
 def generate_circle():
@@ -20,7 +20,7 @@ def generate_circle():
     array=[[0]*32 for i in range(32)]
     x=random.randint(10,22)
     y=random.randint(10,22)
-    r=random.randint(6,10)
+    r=random.uniform(7.38, 9.456)
     for i in range(len(array)):
         for j in range(len(array)):
             if (i-x)**2+(j-x)**2<=r**2:
@@ -43,13 +43,20 @@ def g_console(array):
         #print("")
     return string
 
-"""f = open("training_data.txt", "w")
-for i in range(10):
+f = open("training_data.txt", "w")
+for i in range(300):
     rectangle = generate_rectangle()
     circle = generate_circle()
     f.write(g_console(rectangle))
     f.write(g_console(circle))
-f.close()"""
+f.close()
+f = open("test_data.txt", "w")
+for i in range(20):
+    rectangle = generate_rectangle()
+    circle = generate_circle()
+    f.write(g_console(rectangle))
+    f.write(g_console(circle))
+f.close()
 
 
 model=[[0]*32 for i in range(32)]
