@@ -36,6 +36,6 @@ for lst in array_of_test_array:
     if final_ans==0:
         print('idk')
     elif final_ans>0:
-        print(square)
+        print('square')
     else:
-        print(circle)
+        print('circle')
