@@ -43,14 +43,23 @@ def g_console(array):
         #print("")
     return string
 
-f = open("training_data.txt", "w")
+"""f = open("training_data.txt", "w")
 for i in range(10):
     rectangle = generate_rectangle()
     circle = generate_circle()
     f.write(g_console(rectangle))
     f.write(g_console(circle))
+f.close()"""
+
+
+model=[[0]*32 for i in range(32)]
+with open('training_data.txt') as f:
+    lines = f.readlines()
+for i in range(len(lines)):
+    line=list(map(int, lines[i].split()))
+    #print(line)
+    for j in range(len(line)):
+        model[(i%33)-1][j]+=line[j]
+f=open("model.txt", "w")
+f.write(g_console(model))
 f.close()
-
-
-#array=[[0]*32 for i in range(32)]
-#f = open("training_data.txt", "r")
