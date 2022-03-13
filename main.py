@@ -30,7 +30,7 @@ for lst in array_of_test_array:
         for j in range(32):
             #if there is a value in a specific grid, add the value of the specific grid from model to the final ans
             if lst[i][j] != 0:
-                final_ans+=model[i][j]
+                final_ans+=int(model[i][j])
 
     #checks to see what our final result is
     if final_ans==0:
