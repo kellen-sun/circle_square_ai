@@ -8,7 +8,6 @@ def generate_rectangle():
     y1 = random.randint(0,31)
     x2 = random.randint(0,31)
     y2 = random.randint(0,31)
-
     for i in range(32):
         if i>=min(x1,x2) and i<=max(x1,x2):
             for j in range(32):
@@ -34,12 +33,13 @@ def g_console(array):
     for i in array:
         for j in i:
             if len(str(j))==2:
-                string = string+str(j)
+                string = string+str(j)+' '
                 #print(j, end="")
             else:
                 string = string+str(j)+" "
                 #print(str(j)+" ", end="")
         string =string+'\n'
+    string = string+'\n'
         #print("")
     return string
 
@@ -47,6 +47,6 @@ f = open("training_data.txt", "w")
 for i in range(10):
     rectangle = generate_rectangle()
     circle = generate_circle()
-    #f.write(g_console(generate_rectangle()))
+    f.write(g_console(rectangle))
     f.write(g_console(circle))
 f.close()
