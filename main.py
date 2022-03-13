@@ -37,5 +37,5 @@ for lst in array_of_test_array:
         print('idk')
     elif final_ans>0:
         print(square)
-    else final_ans<0:
+    else:
         print(circle)
