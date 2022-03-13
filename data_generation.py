@@ -44,7 +44,7 @@ def g_console(array):
     return string
 
 f = open("training_data.txt", "w")
-for i in range(10):
+for i in range(100):
     rectangle = generate_rectangle()
     circle = generate_circle()
     f.write(g_console(rectangle))
